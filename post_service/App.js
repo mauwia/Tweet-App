@@ -14,8 +14,9 @@ app.get('/posts',(req,res)=>{
 })
 
 app.post('/post',async (req,res)=>{
-    // console.log('hello')
-    try{let id=randomBytes(4).toString('hex')
+    console.log('hello')
+    try{
+    let id=randomBytes(4).toString('hex')
     let {title}=req.body
     posts[id]={
         id,title
@@ -34,7 +35,10 @@ app.post('/post',async (req,res)=>{
 })
 app.post('/events',(req,res)=>{
     console.log("Recieved Events",req.body.type)
+    // const {type}
     res.send({})
 })
 
-app.listen(4000)
+app.listen(4000,()=>{
+    console.log('4000')
+})
